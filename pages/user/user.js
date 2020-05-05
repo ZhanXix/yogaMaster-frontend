@@ -1,9 +1,7 @@
 // pages/user/user.js
 // Post http://127.0.0.1:8000/usr/register
 // 注册
-// var form = new FormData();
-// form.append("usrProfile", fileInput.files[0], "/C:/Users/yang/Desktop/2.jpg");
-// form.append("usrname", "yy");
+// request: {"usrname":""} 
 // Jsonresponse：
 // { "state": "200", "message": "登录成功", "usrid": 1 }
 
@@ -49,24 +47,26 @@ Page({
   Register(){
     const url='/usr/register'
     var that=this;
-    const postData={"usrname":"{{userinfo.nickName}}"}
+    const postData={"usrname":"{{userinfo.nickName}}"}  //把用户名传到后台服务器作为标识
     const res = {
       "state": "200", 
       "message": "登录成功", 
       "usrid": 2
     }
     call.request(url, postData, this.shuffleSuc, this.fail);
+
+    //////前端调试看效果用，连接后端时注释掉
     this.shuffleSuc(res);
   },
   shuffleSuc: function (res) {
     var that = this;
     if (res.state=='200'){
-    console.log(res.data);
-    app.globalData.usrid = res.usrid;
-    console.log("成功");
+      console.log(res.data);
+      app.globalData.usrid = res.usrid;
+      console.log("成功");
     }
     },
     fail: function () {
-    console.log("失败");
+      console.log("失败");
   },
 })

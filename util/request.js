@@ -10,30 +10,30 @@ var host = 'http:/127.0.0.1:8000';
 * doFail：失败的回调函数
 */
 function request(url, postData, doSuccess, doFail) {
-// 显示加载中效果
-wx.showLoading({
-  title: '加载中',
-  mask: true
-})
+  // 显示加载中效果
+  wx.showLoading({
+    title: '加载中',
+    mask: true
+  })
 
-wx.request({
-      //项目的真正接口，通过字符串拼接方式实现
-  url: host + url,
-  header: {
+  wx.request({
+    //项目的真正接口，通过字符串拼接方式实现
+    url: host + url,
+    header: {
       "content-type": "application/json;charset=UTF-8"
-  },
-  data: postData,
-  method: 'POST',
-  success: function (res) {
-      //参数值为res.data,直接将返回的数据传入
-    doSuccess(res);
     },
-  fail: function () {
-    doFail();
-  },
-  complete: function (){
-    wx.hideLoading()
-  }
+    data: postData,
+    method: 'POST',
+    success: function (res) {
+      //参数值为res.data,直接将返回的数据传入
+      doSuccess(res.data);
+    },
+    fail: function () {
+      doFail();
+    },
+    complete: function (){
+      wx.hideLoading()
+    }
   })
 }
 

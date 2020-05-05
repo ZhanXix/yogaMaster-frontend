@@ -12,13 +12,10 @@
 // Post http://127.0.0.1:8000/home/getResult
 // 用户根据选中的姿势上传图片得到比较结果图片
 //  requset :
-// { "yogaName":"yogaName",
+// { "imgid": "1",
 //   "usrid":"1",
 //   "uploadimg": "/C:/Users/yang/Desktop/3.png"
 // }
-// // var form = new FormData();
-// // form.append("imgid", "1");
-// // form.append("uploadimg", fileInput.files[0], "/C:/Users/yang/Desktop/3.png");
 // Jsonresponse：
 // { "state": "200", "message": "获取结果图片成功", "data": "http://127.0.0.1:8000/images/result/a.jpg", "content": "some difference" }
 
@@ -70,7 +67,7 @@ Page({
             'Content-Type': 'multipart/form-data' //********
           },
           formData: {
-            "yogaName": this.yogaName,
+            "imgid": app.globalData.imgid,
             "usrid": this.usrid,
             "uploadimg": tempFilePaths[0]
           },
@@ -120,19 +117,23 @@ Page({
       "data": "https://ae01.alicdn.com/kf/H3abcea11ef234dada59061c9676bb80fb.jpg"
     }
     call.request(url, postData,this.shuffleSuc, this.fail);
+
+    //////前端调试看效果用，连接后端时注释掉
     this.shuffleSuc(res);
 
     const url2='/usr/ifFavorite'
     const postData2={
-      "yogaName": this.yogaName,
+      "imgid": app.globalData.imgid,
       "usrid": this.usrid
     };
     const res2={
       "state": "200",
       "message": "查询收藏成功",
-      "data": 0
+      "data": "0"
     }
     call.request(url2, postData2,this.shuffleSuc2, this.fail);
+
+    //////前端调试看效果用，连接后端时注释掉
     this.shuffleSuc(res2);
   },
   shuffleSuc: function (res) {
@@ -151,9 +152,15 @@ Page({
     var that = this;
     if (res.state=='200'){
       console.log(res.data);
-      that.setData({
-        isCollect: res.data,
-      })
+      if (res.data=='1'){
+        that.setData({
+          isCollect: 1
+        })
+      }else{
+        that.setData({
+          isCollect: 0
+        })
+      }
       console.log(res.message);
     }
   },
@@ -161,18 +168,22 @@ Page({
     console.log("失败");
   },
 
+  //取消收藏
   reduceFavorites () {
-    const url='/usr/reduceFavorites'
+    const url='/usr/delFavorites'
     var that=this;
     const postData={
-      "yogaName": this.yogaName,
+      "imgid": app.globalData.imgid,
       "usrid": this.usrid,
     };
     const res={
       'state': '200', 'message': '取消收藏成功' 
     }
     call.request(url, postData,this.reduceFavoritesSuc, this.fail);
+
+    //////前端调试看效果用，连接后端时注释掉
     this.reduceFavoritesSuc(res);
+
   },
   reduceFavoritesSuc(res){
     var that = this;
@@ -184,18 +195,22 @@ Page({
     }
   },
 
+  //添加收藏
   addFavorites () {
     const url='/usr/addFavorites'
     var that=this;
     const postData={
-      "yogaName": this.yogaName,
+      "imgid": app.globalData.imgid,
       "usrid": this.usrid,
     };
     const res={
       'state': '200', 'message': '收藏成功' 
     }
     call.request(url, postData,this.addFavoritesSuc, this.fail);
+
+    //////前端调试看效果用，连接后端时注释掉
     this.addFavoritesSuc(res);
+
   },
   addFavoritesSuc(res){
     var that = this;

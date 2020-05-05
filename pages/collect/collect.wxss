@@ -13,3 +13,14 @@ page{
   border-radius: 15rpx;
   width: 100%;
 }
+
+.collect_button{
+  padding: 20rpx;
+  position: relative;
+}
+.collect_button .btn{
+  background-color: #fff;
+  width: fit-content;
+  position: absolute;
+  left: 27.5%;
+}

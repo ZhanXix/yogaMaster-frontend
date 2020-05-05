@@ -2,7 +2,8 @@
 App({
 
   globalData:{
-    "usrid":"1"
+    "usrid": 0,
+    "imgid": 0
   },
 
   /**

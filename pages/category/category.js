@@ -6,17 +6,17 @@ Page({
    */
   data: {
     classList:[
-      {"id":0,
+      {"id":1,
       "image_src":"https://ae01.alicdn.com/kf/Hbfa13a9478b5429bab3eca3c770e3c42m.jpg",
       "open_type":"navigate",
       "navigator_url":"/pages/level1/level1"
       },
-      {"id":1,
+      {"id":2,
       "image_src":"https://ae01.alicdn.com/kf/H4c981b0857294648b7249affbd2841a5E.jpg",
       "open_type":"navigate",
       "navigator_url":"/pages/level2/level2"
       },
-      {"id":2,
+      {"id":3,
       "image_src":"https://ae01.alicdn.com/kf/Hdc1e3131bdae4121bad40c5e54137978Z.jpg",
       "open_type":"navigate",
       "navigator_url":"/pages/level3/level3"

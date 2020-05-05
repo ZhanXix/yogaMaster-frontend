@@ -27,6 +27,8 @@ Page({
       "data": ["http://127.0.0.1:8000/yogaMaster/images/yoga/1.jpg","http://127.0.0.1:8000/yogaMaster/images/yoga/2.jpg","http://127.0.0.1:8000/yogaMaster/images/yoga/3.jpg","http://127.0.0.1:8000/yogaMaster/images/yoga/4.jpg"]
       }
     call.request(url, postData,this.shuffleSuc, this.fail);
+
+    //////前端调试看效果用，连接后端时注释掉
     this.shuffleSuc(res);
   },
   shuffleSuc: function (res) {
@@ -34,63 +36,31 @@ Page({
     if (res.state=='200'){
     console.log(res.data);
     that.setData({
-    state:res.state,
-    message:res.message,
-    data: res.data,
+      state:res.state,
+      message:res.message,
+      data: res.data,
     })
     console.log("成功");
     }
-    },
-    fail: function () {
+  },
+  fail: function () {
     console.log("失败");
-    },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  delAllCollect: function() {
+    const url='/home/delAllFavorites'
+    var that=this;
+    const postData={"userid":this.usrid};
+    const res = { 
+      'state': '200', 
+      'message': '取消所有收藏成功' 
+    }
+    call.request(url, postData,this.delAllCollectSuc, this.fail);
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  delAllCollectSuc: function (res) {
+    var that = this;
+    if (res.state=='200'){
+      console.log(res.message);
+    }
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

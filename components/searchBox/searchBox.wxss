@@ -3,7 +3,7 @@
   padding: 10rpx;
   background-color: var(--themeColor);
 }
-.search_box navigator {
+.search_box .search_navigator {
   height: 98%;
   display: flex;
   justify-content: center;
