@@ -1,0 +1,35 @@
+<!--pages/detail/detail.wxml-->
+<view class="detail_title">
+  <view class="detail_title_text">
+    <text class="red">| </text>
+    <text class="black">{{yogaName}}</text>
+  </view>
+  <view class="detail_collect" wx:if="{{isCollect}}">
+    <image src="/icons/collect_fill.png" catchtap="reduceFavorites" mode="heightFix"></image>
+  </view>
+  <view class="detail_collect" wx:else>
+    <image src="/icons/collect.png" catchtap="addFavorites"  mode="heightFix"></image>
+  </view>
+</view>
+<view class="detail_img">
+  <image src="{{data}}" mode="widthFix"></image>
+</view>
+
+<view wx:if="{{haveButton}}">
+  <button type="warn" plain="true" bindtap="chooseImage">
+    上传你的瑜伽图
+  </button>
+</view>
+<view  class="upload_img" wx:else>
+  <view class="detail_title">
+    <text class="red">| </text>
+    <text class="black">分析结果</text>
+  </view>
+  <view class="detail_text">
+    <text>{{resultText}}</text>
+    </view>  
+  <image src="{{resultImage}}" mode="widthFix"></image>
+  <button type="warn" plain="true" bindtap="goBack">
+    返回
+  </button>
+</view>

@@ -1,0 +1,11 @@
+<!--pages/collect/collect.wxml-->
+<!-- <text>pages/collect/collect.wxml</text>
+<view class='data' wx:for='{{data}}' wx:key='index'>
+  <text>{{index}}:{{item}}</text>
+</view> -->
+
+<view class="record_page">
+  <view class="record_image" wx:for="{{data}}" wx:key="index">
+    <image src="{{item}}" mode="widthFix"></image>
+  </view>
+</view>

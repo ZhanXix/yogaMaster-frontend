@@ -1,0 +1,49 @@
+<!--index.wxml-->
+<view class="yoga_index">
+  <!-- 搜索框 -->
+  <searchBox/>
+
+  <view class="index_character">
+    <text class="red">| </text>
+    <text class="black">最热项目</text>
+  </view>
+  <!-- 轮播图 -->
+  <view class="index_swiper">
+    <swiper autoplay="true" indicator-dots="true" circular="true" indicator-color="#fff" indicator-active-color="var(--themeColor)">
+      <swiper-item 
+      wx:for="{{swiperList}}"
+      wx:key="id"
+      >
+        <navigator url="{{item.navigator_url}}" open-type="{{item.open_type}}">
+          <image src="{{item.image_src}}" mode="widthFix"></image>
+        </navigator>
+      </swiper-item>
+    </swiper>
+  </view>
+
+  <!-- 导航栏 -->
+  <view class="index_cate">
+    <navigator url="{{item.navigator_url}}" open-type="{{item.open_type}}"
+    wx:for="{{cateList}}"
+    wx:key="id"
+    >
+      <image src="{{item.image_src}}" mode="widthFix"></image>
+      <view>{{item.name}}</view>
+    </navigator>
+  </view>
+
+  <view class="index_character">
+    <text class="red">| </text>
+    <text class="black">瑜伽信息</text>
+  </view>
+  <!-- 下方图片 -->
+  <view class="index_image">
+    <navigator url="{{item.navigator_url}}" open-type="{{item.open_type}}"
+    wx:for="{{imageList}}"
+    wx:key="id"
+    >
+      <image src="{{item.image_src}}" mode="widthFix"></image>
+    </navigator>
+  </view>
+
+</view>

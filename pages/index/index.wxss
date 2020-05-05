@@ -1,0 +1,44 @@
+.index_character {
+  padding: 20rpx 10rpx 10rpx 10rpx;
+  font-size:150%;
+  font-weight: 900;
+}
+.index_character .red {
+  color: var(--themeColor);
+}
+.index_character .black {
+  padding: 10rpx 0rpx 0rpx 0rpx;
+  color: #5a5a5a;
+}
+
+.index_swiper swiper {
+  width: 750rpx;
+  height: 303rpx;
+  padding: 10rpx;
+}
+.index_swiper swiper image {
+  width: 100%;
+}
+
+.index_cate {
+  display: flex;
+}
+.index_cate navigator {
+  flex: 1;
+  padding: 40rpx 40rpx 10rpx 40rpx;
+}
+.index_cate navigator image {
+  width: 100%;
+}
+.index_cate navigator view {
+  color: #5a5a5a;
+}
+
+.index_image {
+  padding: 10rpx 10rpx 0 10rpx;
+}
+.index_image image {
+  width: 100%;
+}
+
+

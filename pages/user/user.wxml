@@ -1,0 +1,52 @@
+<!--pages/user/user.wxml-->
+<view class="user_info_wrap">
+  <view wx:if="{{userLogin===loginOK}}" class="user_image_wrap">
+    <image class="user_background" src="{{userinfo.avatarUrl}}" mode="scaleToFill"></image>
+    <view class="user_info">
+      <image class="user_icon" src="{{userinfo.avatarUrl}}"></image>
+      <view class="user_name">{{userinfo.nickName}}</view>
+    </view>
+  </view>
+  <view wx:else class="user_button_back">
+    <view class="user_button">
+      <button type="warn" open-type="getUserInfo" bindgetuserinfo="handleGetUserInfo">
+      点击登录
+      </button>
+    </view>
+  </view>
+</view>
+<view class="user_content">
+  <!-- 我的收藏 -->
+  <view class="user_item">
+    <navigator url="/pages/collect/collect">我的收藏</navigator>
+  </view>
+  <!-- 学习记录 -->
+  <view class="user_item">
+    <navigator url="/pages/record/record">学习记录</navigator>
+  </view>
+  
+  <view class="user_item">
+    <!-- 联系客服 -->
+      <view class="user_text">联系客服
+        <button style="width:95%" open-type="contact">*</button>
+      </view>
+    <view class="user_line">
+    <!-- 意见反馈 -->
+      <view class="user_text">意见反馈
+        <button style="width:95%" open-type="feedback">*</button>
+      </view>
+    </view>
+    <!-- 关于我们 -->
+    <navigator url="/pages/about/about">关于我们</navigator>
+  </view>
+
+  <!-- 把应用推荐给其他人 -->
+  <view class="user_item">
+    <view class="user_text">把应用推荐给其他人
+        <button style="width:95%" open-type="share">*</button>
+    </view>
+  </view>
+  
+</view>
+
+

@@ -1,0 +1,9 @@
+<!--pages/level2/level2.wxml-->
+<view class="level_page">
+  <view class="yoga_item" wx:for="{{data}}" wx:key="pk">
+      <navigator url="/pages/detail/detail?yogaName={{item.fields.yogaName}}">
+        <view class="yoga_name">/{{item.fields.yogaName}}/</view>
+        <image src="{{item.fields.image}}" mode="widthFix"> </image>
+      </navigator>
+  </view>
+</view>

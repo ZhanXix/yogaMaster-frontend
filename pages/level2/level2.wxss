@@ -1,0 +1,26 @@
+/* pages/level2/level2.wxss */
+page{
+  background-color: #edece8;
+}
+.level_page {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.level_page .yoga_item{
+  width: 49vw;
+  padding: 15rpx 10rpx;
+}
+.level_page .yoga_item navigator{
+  padding:15rpx 10rpx 0 10rpx;
+  background-color: #fff;
+  border-radius: 15rpx;
+}
+.level_page .yoga_item navigator .yoga_name{
+  padding: 0 15rpx;
+  color: #5a5a5a;
+}
+.level_page .yoga_item navigator image{
+  width: 100%;
+}

@@ -1,0 +1,16 @@
+<!--pages/category/category.wxml-->
+<view class="yoga_category">
+  <!-- 搜索框 -->
+  <searchBox/>
+
+  <!-- 瑜伽大类 -->
+  <view class="category_image">
+    <navigator url="{{item.navigator_url}}" open-type="{{item.open_type}}"
+    wx:for="{{classList}}"
+    wx:key="id"
+    >
+      <image src="{{item.image_src}}" mode="widthFix"></image>
+    </navigator>
+  </view>
+
+</view>

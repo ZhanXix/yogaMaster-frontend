@@ -1,0 +1,101 @@
+/* pages/user/user.wxss */
+page{
+  background-color: #edece8;
+  /* background-color: var(--themeColor); */
+}
+.user_info_wrap{
+  height: 45vh;
+  overflow: hidden;
+  position: relative;
+  /* background-color: var(--themeColor);  */
+}
+.user_info_wrap .user_image_wrap{
+  position: relative; /* 相对定位 */
+}
+.user_info_wrap .user_image_wrap .user_background{
+  height: 46vh;
+  filter: blur(15rpx);   
+  border-radius: 15rpx; 
+  width: 100vw;
+}
+.user_info_wrap .user_image_wrap .user_info{
+  position: absolute; /* 绝对定位 */
+  left: 50%;
+  transform: translateX(-50%);
+  top: 30%;
+  text-align: center; /* 文字水平居中 */
+}
+.user_info_wrap .user_image_wrap .user_info .user_icon{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%; /* 边框圆角 */
+}
+.user_info_wrap .user_image_wrap .user_info .user_name{
+  color: #fff;
+  margin-top: 35rpx;
+  font-size: 40rpx;
+  text-shadow: #5a5a5a 1px 0 0, #5a5a5a 0 1px 0, #5a5a5a -1px 0 0, #5a5a5a 0 -1px 0;
+}
+.user_info_wrap .user_button_back{
+  height: 45vh;
+  overflow: hidden;
+  background-color: var(--themeColor);
+}
+.user_info_wrap .user_button_back .user_button{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 30%;
+  padding: 30rpx;
+}
+
+/* .user_content{
+  position: relative; 
+} */
+/* .user_content .user_star{
+  text-align: left;
+  position: absolute;
+  width: 95%;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -30rpx;
+  padding: 20rpx 0rpx 20rpx 35rpx;
+  border-radius: 15rpx;
+  border: 1rpx solid var(--themeColor); 
+} */
+.user_content .user_item{
+  padding: 0 0 20rpx 0; 
+}
+.user_content .user_item navigator{
+  background-color: #fff;
+  color: #5a5a5a;
+  font-size: 35rpx;
+  top: 30rpx;
+  padding: 20rpx 40rpx; 
+  border-radius: 15rpx;
+  position: relative;
+}
+.user_content .user_item .user_text{
+  background-color: #fff;
+  color: #5a5a5a;
+  font-size: 35rpx;
+  top: 30rpx;
+  padding: 20rpx 40rpx; 
+  border-radius: 15rpx;
+  position: relative;
+}
+.user_content .user_item .user_line{
+  padding: 4rpx 0 4rpx 0; 
+}
+.user_content .user_item .user_text button{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0%;
+  color: #fff;
+  background-color: transparent;   /*按钮透明*/  
+	border:none;				/*设置按钮边框*/
+}
+.user_content .user_item .user_text button::after{
+  border:none;
+}

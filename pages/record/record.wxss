@@ -1,0 +1,15 @@
+/* pages/record/record.wxss */
+page{
+  background-color: #edece8;
+}
+.record_page{
+  padding: 10rpx 15rpx 0 15rpx;
+}
+.record_page .record_image{
+  padding: 15rpx 0 0 0;
+}
+.record_page .record_image image{
+  background-color: #fff;
+  border-radius: 15rpx;
+  width: 100%;
+}

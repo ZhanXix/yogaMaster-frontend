@@ -1,0 +1,50 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/category/category",
+    "pages/level1/level1",
+    "pages/level2/level2",
+    "pages/level3/level3",
+    "pages/detail/detail",
+    "pages/search/search",
+    "pages/user/user",
+    "pages/record/record",
+    "pages/collect/collect",
+    "pages/about/about"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#eb4450",
+    "navigationBarTitleText": "瑜伽大师",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "color": "#5a5a5a",
+    "selectedColor": "#ff2d4a",
+    "backgroundColor": "",
+    "position": "bottom",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "icons/home.png",
+        "selectedIconPath": "icons/home_fill.png"
+      },
+      {
+        "pagePath": "pages/category/category",
+        "text": "分类",
+        "iconPath": "icons/manage.png",
+        "selectedIconPath": "icons/manage_fill.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "icons/user.png",
+        "selectedIconPath": "icons/user_fill.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

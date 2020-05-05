@@ -1,0 +1,19 @@
+<!--pages/level1/level1.wxml-->
+<!-- <view class='data' wx:for='{{data}}' wx:key='index'>
+    <view class='detail' wx:for='{{data[index]}}' wx:for-index='key2'> -->
+    <!--这里必须for-index不然会丢失key2原因未知，或许和key的刷新有关？-->
+      <!-- <text>{{key2}}:{{item}}</text>
+      <view class='fields' wx:for='{{data[index].fields}}' wx:for-index='fields_key'>
+      <text>{{fields_key}}:{{item}}</text>
+      </view>
+    </view>
+</view> -->
+
+<view class="level_page">
+  <view class="yoga_item" wx:for="{{data}}" wx:key="pk">
+      <navigator url="/pages/detail/detail?yogaName={{item.fields.yogaName}}">
+        <view class="yoga_name">/{{item.fields.yogaName}}/</view>
+        <image src="{{item.fields.image}}" mode="widthFix"> </image>
+      </navigator>
+  </view>
+</view>

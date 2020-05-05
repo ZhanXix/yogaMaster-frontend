@@ -1,0 +1,12 @@
+/* pages/category/category.wxss */
+.category_image {
+  padding: 23rpx 15rpx 0 15rpx;
+}
+.category_image navigator {
+  padding: 0rpx 0rpx 15rpx 0rpx;
+}
+.category_image navigator image {
+  background-color: #fff;
+  border-radius: 15rpx;
+  width: 100%;
+}
