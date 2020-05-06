@@ -4,9 +4,9 @@
 
 后端见：https://github.com/yy-pku/yogaMaster    
 
-**v1.0.0** 完成所有小程序架构
+> **v1.0.0** 完成所有小程序架构
 
-**v1.1.0（当前版本）** 完成前后端联调
+> **v1.1.0（当前版本）** 完成前后端联调
 
 
 
@@ -14,9 +14,9 @@
 
 ## 界面展示
 
-![首页](https://pics.images.ac.cn/image/5eb2c3d1a7cf9.html)
-![分类](https://pics.images.ac.cn/image/5eb2c4295efbf.html)
-![个人中心](https://pics.images.ac.cn/image/5eb2c483c90a9.html)
+![首页](https://ae01.alicdn.com/kf/Hf6b180c580bf4367ac22a50d503f6232l.jpg)
+![分类](https://ae01.alicdn.com/kf/H5f8f331e685742a788d028ac2ec47955i.jpg)
+![个人中心](https://ae01.alicdn.com/kf/Haf5787469ba54a4a930e99843e64ee4e7.jpg)
 
 ## 文件夹
 
