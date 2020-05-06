@@ -11,7 +11,20 @@ Page({
   data: {
     state:'',
     message:'',
-    data:''
+    data:[
+      {"imgid": 0,
+      "yogaName": "加载失败", 
+      "level": 0,
+      "imgDescription": "",
+      "image": "https://ae01.alicdn.com/kf/Hbcf67844b4844c7a9d6e355f393936f15.jpg"
+      },
+      {"imgid": 0,
+      "yogaName": "加载失败", 
+      "level": 0,
+      "imgDescription": "",
+      "image": "https://ae01.alicdn.com/kf/Hbcf67844b4844c7a9d6e355f393936f15.jpg"
+      }
+    ]
   },
 
   /**
@@ -21,6 +34,9 @@ Page({
     const url='/home/getYogaByLevel'
     var that=this;
     const postData={"level":"3"};
+    call.request(url, postData,this.shuffleSuc, this.fail);
+    
+    ///////调试看效果用//////// 
     const res={
       "state": "200",
       "message": "获取瑜伽列表成功",
@@ -39,10 +55,7 @@ Page({
         }
       ]
     }
-    call.request(url, postData,this.shuffleSuc, this.fail);
-    
-    ///////调试看效果用//////// 
-    this.shuffleSuc(res);
+    //this.shuffleSuc(res);
 
   },
   shuffleSuc: function (res) {

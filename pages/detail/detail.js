@@ -30,7 +30,7 @@ Page({
     yogaName: '',
     state:'',
     message:'',
-    data:'',
+    data:'https://ae01.alicdn.com/kf/Hbcf67844b4844c7a9d6e355f393936f15.jpg',
     tempFilePaths:[],
     haveButton: 1,
     resultImage: '',
@@ -41,24 +41,19 @@ Page({
   //选择要上传的图片
   chooseImage(e) {
     var that = this
-    // const res = {
-    //   "state": "200", 
-    //   "message": "获取结果图片成功", 
-    //   "data": "https://ae01.alicdn.com/kf/H3abcea11ef234dada59061c9676bb80fb.jpg", 
-    //   "content": "some difference" 
-    // }
     wx.chooseImage({
       sizeType: ['original', 'compressed'],  //可选择原图或压缩后的图片
       sourceType: ['album', 'camera'], //可选择性开放访问相册、相机
       success: res => {
         var tempFilePaths = res.tempFilePaths
         var that = this
-        // that.setData({
-        //   tempFilePaths: res.tempFilePaths
-        // })
         console.log("tempFilePaths =", res.tempFilePaths[0])
         // wx.setStorageSync('card', tempFilePaths[0]);
         console.log("host =", app.globalData.host)
+        wx.showLoading({  // 显示上传中效果
+          title: '上传中',
+          mask: true
+        })
         wx.uploadFile({    //上传图片并获取传回来的图片路径
           url: app.globalData.host +'/home/getResult', 
           filePath: tempFilePaths[0],
@@ -84,10 +79,13 @@ Page({
           fail () {
             that.setData({
               resultImage: "",
-              resultText: "upload error",
+              resultText: "图片上传失败，请重试",
               haveButton:0 
             })     
           },
+          complete (){
+            wx.hideLoading()
+          }
         })
       }
     })
@@ -110,30 +108,30 @@ Page({
     const url='/home/getYogaImg'
     var that=this;
     const postData={"yogaName": yogaName};
+    call.request(url, postData,this.shuffleSuc, this.fail);
+
+    //////前端调试看效果用，连接后端时注释掉
     const res={
       "state": "200",
       "message": "获取瑜伽图片成功",
       "data": "https://ae01.alicdn.com/kf/H3abcea11ef234dada59061c9676bb80fb.jpg"
     }
-    call.request(url, postData,this.shuffleSuc, this.fail);
-
-    //////前端调试看效果用，连接后端时注释掉
-    this.shuffleSuc(res);
+    //this.shuffleSuc(res);
 
     const url2='/usr/ifFavorite'
     const postData2={
       "imgid": app.globalData.imgid,
       "usrid": app.globalData.usrid
     };
-    const res2={
-      "state": "200",
-      "message": "查询收藏成功",
-      "data": "0"
-    }
     call.request(url2, postData2,this.shuffleSuc2, this.fail);
 
     //////前端调试看效果用，连接后端时注释掉
-    this.shuffleSuc(res2);
+    const res2={
+      "state": "200",
+      "message": "查询收藏成功",
+      "data": 1
+    }
+    //this.shuffleSuc2(res2);
   },
   shuffleSuc: function (res) {
     var that = this;
@@ -175,13 +173,13 @@ Page({
       "imgid": app.globalData.imgid,
       "usrid": app.globalData.usrid,
     };
-    const res={
-      'state': '200', 'message': '取消收藏成功' 
-    }
     call.request(url, postData,this.reduceFavoritesSuc, this.fail);
 
     //////前端调试看效果用，连接后端时注释掉
-    this.reduceFavoritesSuc(res);
+    const res={
+      'state': '200', 'message': '取消收藏成功' 
+    }
+    //this.reduceFavoritesSuc(res);
 
   },
   reduceFavoritesSuc(res){
@@ -202,13 +200,13 @@ Page({
       "imgid": app.globalData.imgid,
       "usrid": app.globalData.usrid,
     };
-    const res={
-      'state': '200', 'message': '收藏成功' 
-    }
     call.request(url, postData,this.addFavoritesSuc, this.fail);
 
     //////前端调试看效果用，连接后端时注释掉
-    this.addFavoritesSuc(res);
+    const res={
+      'state': '200', 'message': '收藏成功' 
+    }
+    //this.addFavoritesSuc(res);
 
   },
   addFavoritesSuc(res){

@@ -64,12 +64,12 @@ Page({
     call.request(url, postData, this.shuffleSuc, this.fail);
 
     //////前端调试看效果用，连接后端时注释掉
-    this.shuffleSuc(res);
+    //this.shuffleSuc(res);
   },
   shuffleSuc: function (res) {
     var that = this;
     if (res.state=='200'){
-      console.log(res.data);
+      console.log(res);
       app.globalData.usrid = res.usrid;
       console.log("成功");
     }

@@ -39,10 +39,29 @@
   background-color: #ededed;
 }
 
+.upload_img .detail_title_2 {
+  padding: 20rpx 10rpx 10rpx 10rpx;
+  height: 90rpx;
+}
+.upload_img .detail_title_2 .detail_title_text_2{
+  width: 50vw;
+}
+.upload_img .detail_title_2 .detail_title_text_2 .red_2{
+  color: var(--themeColor);
+  font-size:  150%;
+  font-weight: 900;
+}
+.upload_img .detail_title_2 .detail_title_text_2 .black_2{
+  padding: 10rpx 0rpx 0rpx 0rpx;
+  font-size:  150%;
+  font-weight: 900;
+  color: #5a5a5a;
+}
 .upload_img .detail_text{
   padding: 10rpx 20rpx;
 }
 .upload_img text{
+  color: #5a5a5a;
   font-size: 120%;
   font-weight: 500;
 }

@@ -21,13 +21,15 @@
   </button>
 </view>
 <view  class="upload_img" wx:else>
-  <view class="detail_title">
-    <text class="red">| </text>
-    <text class="black">分析结果</text>
+  <view class="detail_title_2">
+    <view class="detail_title_text_2">
+      <text class="red_2">| </text>
+      <text class="black_2">分析结果</text>
+    </view>
   </view>
   <view class="detail_text">
     <text>{{resultText}}</text>
-    </view>  
+  </view>  
   <image src="{{resultImage}}" mode="widthFix"></image>
   <button type="warn" plain="true" bindtap="goBack">
     返回

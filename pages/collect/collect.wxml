@@ -9,7 +9,7 @@
     <image src="{{item}}" mode="widthFix"></image>
   </view>
 </view>
-<view class="collect_button">
+<view class="collect_button" wx:if="{{data}}">
   <view class="btn">
     <button type="warn" plain bindtap="delAllCollect">取消所有收藏</button>
   </view>
