@@ -30,8 +30,8 @@ Page({
     this.setData({userinfo});
     if (this.judgeObj(userinfo)){
       this.setData({userLogin:"getUserInfo:ok"})
-      this.Register()
-      console.log("userid=",app.globalData.usrid)
+      this.Register(userinfo)
+      console.log("userid =",app.globalData.usrid)
     }else{
       this.setData({userLogin:""})
     }
@@ -44,10 +44,18 @@ Page({
     return false;//空
   },
 
-  Register(){
+  Register(userinfo){
     const url='/usr/register'
     var that=this;
-    const postData={"usrname":"{{userinfo.nickName}}"}  //把用户名传到后台服务器作为标识
+    const postData={
+      "nickName": userinfo.nickName,
+      "avatarUrl": userinfo.avatarUrl,
+      "city": userinfo.city,
+      "country": userinfo.country,
+      "gender": userinfo.gender,
+      "language": userinfo.language,
+      "province": userinfo.province
+    }  //把用户信息传到后台服务器作为标识
     const res = {
       "state": "200", 
       "message": "登录成功", 

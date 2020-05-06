@@ -27,8 +27,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    usrid: app.globalData.usrid,
-    host: call.host,
     yogaName: '',
     state:'',
     message:'',
@@ -54,31 +52,32 @@ Page({
       sourceType: ['album', 'camera'], //可选择性开放访问相册、相机
       success: res => {
         var tempFilePaths = res.tempFilePaths
+        var that = this
         // that.setData({
         //   tempFilePaths: res.tempFilePaths
         // })
-        console.log(res.tempFilePaths)
+        console.log("tempFilePaths =", res.tempFilePaths[0])
         // wx.setStorageSync('card', tempFilePaths[0]);
+        console.log("host =", app.globalData.host)
         wx.uploadFile({    //上传图片并获取传回来的图片路径
-          url: this.host +'/home/getResult', 
+          url: app.globalData.host +'/home/getResult', 
           filePath: tempFilePaths[0],
-          name: this.yogaName +'uploadImage',
+          name: this.yogaName + 'uploadImage',
           headers: {
             'Content-Type': 'multipart/form-data' //********
           },
           formData: {
             "imgid": app.globalData.imgid,
-            "usrid": this.usrid,
+            "usrid": app.globalData.usrid,
             "uploadimg": tempFilePaths[0]
           },
-
           success (res){
             console.log(res.data);
-            if (res.state=='200'){
+            if (res.data.state=='200'){
               that.setData({
                 resultImage: res.data.data,
                 resultText: res.data.content,
-                haveButton:0 
+                haveButton: 0 
               })              
             }
           },
@@ -110,7 +109,7 @@ Page({
 
     const url='/home/getYogaImg'
     var that=this;
-    const postData={"yogaName": this.yogaName};
+    const postData={"yogaName": yogaName};
     const res={
       "state": "200",
       "message": "获取瑜伽图片成功",
@@ -124,7 +123,7 @@ Page({
     const url2='/usr/ifFavorite'
     const postData2={
       "imgid": app.globalData.imgid,
-      "usrid": this.usrid
+      "usrid": app.globalData.usrid
     };
     const res2={
       "state": "200",
@@ -174,7 +173,7 @@ Page({
     var that=this;
     const postData={
       "imgid": app.globalData.imgid,
-      "usrid": this.usrid,
+      "usrid": app.globalData.usrid,
     };
     const res={
       'state': '200', 'message': '取消收藏成功' 
@@ -201,7 +200,7 @@ Page({
     var that=this;
     const postData={
       "imgid": app.globalData.imgid,
-      "usrid": this.usrid,
+      "usrid": app.globalData.usrid,
     };
     const res={
       'state': '200', 'message': '收藏成功' 

@@ -1,6 +1,5 @@
 var app = getApp();
-//项目URL相同部分，减轻代码量，同时方便项目迁移
-var host = 'http:/127.0.0.1:8000';
+var host = app.globalData.host;
  
 /**
 * POST请求，

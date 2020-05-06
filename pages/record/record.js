@@ -8,7 +8,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-   usrid: app.globalData.usrid,
    data:'',
    state:'',
    message:''
@@ -20,7 +19,7 @@ Page({
   onLoad: function (options) {
     const url='/usr/getStudyRecord'
     var that=this;
-    const postData={"usrid":this.usrid};
+    const postData={"usrid":app.globalData.usrid};
     const res={
     "state": "200",
     "message": "获取学习记录成功",

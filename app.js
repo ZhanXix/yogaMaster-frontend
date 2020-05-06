@@ -3,7 +3,8 @@ App({
 
   globalData:{
     "usrid": 0,
-    "imgid": 0
+    "imgid": 0,
+    "host": 'http:/127.0.0.1:8000'    //服务器url
   },
 
   /**

@@ -8,7 +8,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    usrid: app.globalData.usrid,
     state:'',
     message:'',
     data:''
@@ -18,9 +17,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    const url='/home/getYogaByLevel'
+    const url='/usr/getFavorites'
     var that=this;
-    const postData={"userid":this.usrid};
+    const postData={"usrid":app.globalData.usrid};
     const res={
       "state": "200",
       "message": "获取收藏列表成功",
@@ -48,9 +47,9 @@ Page({
   },
 
   delAllCollect: function() {
-    const url='/home/delAllFavorites'
+    const url='/usr/delAllFavorites'
     var that=this;
-    const postData={"userid":this.usrid};
+    const postData={"usrid":app.globalData.usrid};
     const res = { 
       'state': '200', 
       'message': '取消所有收藏成功' 
