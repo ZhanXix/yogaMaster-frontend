@@ -68,10 +68,11 @@ Page({
           },
           success (res){
             console.log(res.data);
-            if (res.data.state=='200'){
+            var obj = JSON.parse(res.data)
+            if (obj.state=='200'){
               that.setData({
-                resultImage: res.data.data,
-                resultText: res.data.content,
+                resultImage: obj.data,
+                resultText: obj.content,
                 haveButton: 0 
               })              
             }
@@ -84,6 +85,10 @@ Page({
             })     
           },
           complete (){
+            // var res =  '{"state": "200", "message": "获取结果图片成功", "data": "http://127.0.0.1:8000/images/result/a.jpg", "content": "some difference" }'
+            // console.log("res =", res)
+            // var obj=JSON.parse(res)
+            // console.log("obj =", obj)
             wx.hideLoading()
           }
         })
