@@ -4,7 +4,7 @@ App({
   globalData:{
     "usrid": 0,
     "imgid": 0,
-    "host": 'http://127.0.0.1:8000'    //服务器url
+    "host": 'http://39.97.179.145:8000'    //服务器url
   },
 
   /**
