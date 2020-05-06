@@ -4,8 +4,19 @@
 
 后端见：https://github.com/yy-pku/yogaMaster    
 
+**v1.0.0** 完成所有小程序架构
 
-@Zhanxix 2020/5 
+**v1.1.0（当前版本）** 完成前后端联调
+
+
+
+                                                                   @Zhanxix 2020/5 
+
+## 界面展示
+
+![首页](https://pics.images.ac.cn/image/5eb2c3d1a7cf9.html)
+![分类](https://pics.images.ac.cn/image/5eb2c4295efbf.html)
+![个人中心](https://pics.images.ac.cn/image/5eb2c483c90a9.html)
 
 ## 文件夹
 
