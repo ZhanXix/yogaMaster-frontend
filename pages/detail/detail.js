@@ -57,7 +57,7 @@ Page({
         wx.uploadFile({    //上传图片并获取传回来的图片路径
           url: app.globalData.host +'/home/getResult', 
           filePath: tempFilePaths[0],
-          name: this.yogaName + 'uploadImage',
+          name: 'file',
           headers: {
             'Content-Type': 'multipart/form-data' //********
           },
@@ -78,9 +78,9 @@ Page({
           },
           fail () {
             that.setData({
-              resultImage: "",
+              resultImage: "https://ae01.alicdn.com/kf/H70ae4b5c43b341d7b8fd36b4227a12a8P.jpg",
               resultText: "图片上传失败，请重试",
-              haveButton:0 
+              haveButton: 0 
             })     
           },
           complete (){
