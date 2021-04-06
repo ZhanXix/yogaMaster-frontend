@@ -30,7 +30,7 @@ function request(url, postData, doSuccess, doFail) {
     fail: function () {
       doFail();
     },
-    complete: function (){
+    complete: function (){  //取消加载中效果
       wx.hideLoading()
     }
   })
